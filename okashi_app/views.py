@@ -57,7 +57,8 @@ def question(request):
 
         okashi_list=[]
         okashiname_list=[]
-        with open('/home/ec2-user/okashi/static/okashi_app/okashi_data_v2.csv',encoding="shift-jis") as f:
+        with open("static/okashi_app/okashi_data_v2.csv",encoding="shift-jis") as f:
+        #with open('/home/ec2-user/git/okashi/static/okashi_app/okashi_data_v2.csv',encoding="shift-jis") as f:
             header = next(f)
             #print(header)
             for row in f:
