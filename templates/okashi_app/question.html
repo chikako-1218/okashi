@@ -1,0 +1,48 @@
+<html lang="ja">
+    <head>
+
+        <title>診断</title>
+        <meta http-equiv="Content-Type" content="text/html"; charset="utf-8" />
+	<!--<link rel="stylesheet" href="test_v2.css">-->
+
+    </head>
+
+    <body>
+
+      <div class="header">
+        <div class="header-logo">診断</div>
+      </div>
+          <h3>選択肢</h3>
+	  {{count}}
+
+    <div class="contents">
+
+	    {% if count == 3 %}
+		<form action="/recommend" method="post">
+
+	{% else %}
+
+	        <form action="/question" method="post">
+	{% endif %}
+		{% csrf_token %}
+		
+      <div class="contents-item">       
+	      {{option1}}
+	      <!--{% load static %}-->
+	      <button tyep="submit" name="btn0" value="1"><img src="static/okashi_app/{{option1}}.jpg"></button>	     
+	      <img src="static/okashi_app/purin.jpg">
+	      <!--<button type="submit" name="btn0" value="1"><img src="/home/ec2-user/okashi/static/okashi_app/プリン.jpg"></button>-->
+
+        <p>{0}</p>
+      </div>
+      <div class="contents-item">
+	      {{option2}}
+	      <button type="submit" name="btn1" value="1"><img src="static/okashi_app/{{option2}}.jpg"></button>     
+        <p>{1}</p>
+      </div>
+     </form>
+    </div>      
+
+    </body>
+</html>
+
